@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: jfsp90u0f-python-gitops
+  description: This is GitOps manifest for jfsp90u0f-python   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: rhtap/gitops=jfsp90u0f-python
+    backstage.io/kubernetes-id: jfsp90u0f-python 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: jfsp90u0f-python
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:jfsp90u0f-python
